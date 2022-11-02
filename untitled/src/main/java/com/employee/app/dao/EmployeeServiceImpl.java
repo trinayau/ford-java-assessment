@@ -23,7 +23,6 @@ public class EmployeeServiceImpl implements EmployeeService{
             preparedStatement.setInt(1, employee.getId());
             preparedStatement.setString(2, employee.getName());
             preparedStatement.setDouble(3, employee.getSalary());
-            System.out.println(preparedStatement);
             Integer count = preparedStatement.executeUpdate();
             if (count == 1)
                 System.out.println("Employee added successfully to DB.");

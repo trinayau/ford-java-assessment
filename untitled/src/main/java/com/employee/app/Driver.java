@@ -12,9 +12,10 @@ public class Driver {
         // Create DAO using MySql
         EmployeeService employeeService = new EmployeeServiceImpl(EmployeeUtility.getConnectionToMySQL());
 
-        // Add Employee
+//         Add Employee
         employeeService.addEmployee(new Employee(1, "Patrick", 25000.0));
         employeeService.addEmployee(new Employee(2, "Idris", 35000.0));
+        employeeService.addEmployee(new Employee(3, "Trina", 15000.0));
 
         // Find Employee
         Employee foundEmployee = employeeService.getEmployeeById(1);
