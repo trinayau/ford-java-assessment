@@ -9,7 +9,7 @@ public class EmployeeUtility {
         Connection connection = null;
         try {
             connection = DriverManager
-                    .getConnection("jdbc:mysql://localhost:3306/ford_schema?" + "user=root&password=Elyonn2022!");
+                    .getConnection("jdbc:mysql://localhost:3306/ford_schema?" + "user=ford&password=ford");
             System.out.println("Connection to MYSQL successful!");
             Statement stmt = connection.createStatement();
             System.out.println("Drop employee table if exists");
