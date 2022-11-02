@@ -1,5 +1,5 @@
 # Ford Java Assessment
- Ford Java Advanced Assessment
+ Trina Yau's Ford Java Advanced Assessment
 
 ## Connection to MySQL Workbench
 - You will need to create a MySQL db schema called `ford_schema`  
