@@ -13,8 +13,8 @@ public class Driver {
         EmployeeService employeeService = new EmployeeServiceImpl(EmployeeUtility.getConnectionToMySQL());
 
         // Add Employee
-//        employeeService.addEmployee(new Employee(1, "Patrick", 25000.0));
-//        employeeService.addEmployee(new Employee(2, "Idris", 35000.0));
+        employeeService.addEmployee(new Employee(1, "Patrick", 25000.0));
+        employeeService.addEmployee(new Employee(2, "Idris", 35000.0));
 
         // Find Employee
         Employee foundEmployee = employeeService.getEmployeeById(1);
@@ -29,11 +29,9 @@ public class Driver {
         }
 
         // Delete Employee using ID
-//        employeeService.deleteEmployeeById(2);
+        employeeService.deleteEmployeeById(2);
 
         //List all employees
         System.out.println(employeeService.getAllEmployees());
-
-
     }
 }

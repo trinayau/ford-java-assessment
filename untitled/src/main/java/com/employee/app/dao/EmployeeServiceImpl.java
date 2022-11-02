@@ -31,7 +31,7 @@ public class EmployeeServiceImpl implements EmployeeService{
                 System.out.println("Employee could not be added to DB.");
 
         } catch (SQLException e) {
-            System.out.println("Could not add employee to DB.");
+            System.out.println("Could not add employee to DB. " + e);
         }
 
     }
@@ -95,7 +95,7 @@ public class EmployeeServiceImpl implements EmployeeService{
                 System.out.println("Employee could not be deleted with id:" + employeeId);
 
         } catch (SQLException e) {
-            System.out.println("Could not delete this employee with id: " + employeeId);
+            System.out.println("Could not delete this employee with id: " + employeeId + e);
         }
     }
 
@@ -109,7 +109,6 @@ public class EmployeeServiceImpl implements EmployeeService{
                while(resultSet.next()){
                    returnValue.add(new Employee(resultSet));
                }
-
            }
 
        } catch (SQLException e) {
@@ -117,6 +116,5 @@ public class EmployeeServiceImpl implements EmployeeService{
        }
         System.out.println("List of employees:");
         return returnValue;
-
     }
 }
