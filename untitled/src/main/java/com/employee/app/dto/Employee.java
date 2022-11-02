@@ -1,5 +1,7 @@
 package com.employee.app.dto;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -24,6 +26,13 @@ public class Employee implements Comparable<Employee>{
         this.salary = salary;
         this.doj = doj;
     }
+
+    public Employee(ResultSet resultSet) throws SQLException {
+        this.id = resultSet.getInt(1);
+        this.name = resultSet.getString(2);
+        this.salary = resultSet.getDouble(3);
+    }
+
 
     public Integer getId() {
         return this.id;
@@ -56,6 +65,20 @@ public class Employee implements Comparable<Employee>{
     public void setDoj(LocalDate doj) {
         this.doj = doj;
     }
+
+    // Check equality of two employee objects
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (this.getClass() != obj.getClass())
+            return false;
+        Employee other = (Employee) obj;
+        return Objects.equals(id, other.id);
+    }
+
 
     // Naturally order employees by ids:
     @Override
